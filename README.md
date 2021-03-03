@@ -8,7 +8,7 @@
 git clone https://github.com/octoherd/script-sync-branch-protections.git
 $ npx @octoherd/cli \
   --octoherd-token 0123456789012345678901234567890123456789 \
-  scripts/sync-branch-protections/script.js \
+  script-sync-branch-protections/script.js \
   "octoherd/*"\
   --template "octoherd/cli"
 ```
