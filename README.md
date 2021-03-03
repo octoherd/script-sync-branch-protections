@@ -5,8 +5,7 @@
 ## Usage
 
 ```
-git clone https://github.com/octoherd/script-sync-branch-protections.git
-$ npx @octoherd/cli \
+$ npx @octoherd/script-close-renovate-dashboard-issues \
   --octoherd-token 0123456789012345678901234567890123456789 \
   script-sync-branch-protections/script.js \
   "octoherd/*"\
