@@ -5,8 +5,8 @@ let templateBranchProtectionSettings;
 /**
  * Updates branch protection based on a settings from a template repository
  *
- * @param {import('@octoherd/octokit').Octokit} octokit
- * @param {import('@octokit/openapi-types').components["schemas"]["repository"]} repository
+ * @param {import('@octoherd/cli').Octokit} octokit
+ * @param {import('@octoherd/cli').Repository} repository
  * @param { {template: string} } options Custom user options passed to the CLI
  */
 export async function script(octokit, repository, options) {
