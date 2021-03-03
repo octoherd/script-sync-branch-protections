@@ -1,0 +1,25 @@
+{
+  "name": "@octoherd/script-sync-branch-protections",
+  "version": "0.0.0-developement",
+  "type": "module",
+  "description": "An octoherd script to apply branch protection settings from oneand apply it others",
+  "keywords": [
+    "octoherd-script"
+  ],
+  "author": "Gregor Martynus (https://twitter.com/gr2m)",
+  "license": "ISC",
+  "devDependencies": {
+    "@octoherd/octokit": "^2.2.0",
+    "@octokit/openapi-types": "^2.0.0"
+  },
+  "dependencies": {},
+  "exports": "./index.js",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
