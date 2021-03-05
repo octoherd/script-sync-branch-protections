@@ -23,5 +23,6 @@
   },
   "bin": {
     "octoherd-script-sync-branch-protections": "./cli.js"
-  }
+  },
+  "repository": "github:octoherd/script-sync-branch-protections"
 }
