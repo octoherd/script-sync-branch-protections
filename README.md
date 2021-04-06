@@ -7,7 +7,6 @@
 ```
 $ npx @octoherd/script-sync-branch-protections \
   --octoherd-token 0123456789012345678901234567890123456789 \
-  script-sync-branch-protections/script.js \
   "octoherd/*"\
   --template "octoherd/cli"
 ```
