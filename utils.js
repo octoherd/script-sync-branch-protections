@@ -47,7 +47,7 @@ export function protectionResponseDataToUpdateParameters(data) {
   const parameters = mapValues(data, (key, value) => {
     if (/(^|_)url$/.test(key)) return;
     if (Array.isArray(value)) return value;
-    if (typeof value !== "object") return value;
+    if (value === null || typeof value !== "object") return value;
 
     if ("enabled" in value) return value.enabled;
     if ("login" in value) return value.login;
