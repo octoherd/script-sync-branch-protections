@@ -18,6 +18,26 @@
  *     url: 'https://api.github.com/repos/octokit/core.js/branches/master/protection/enforce_admins',
  *     enabled: false
  *   },
+ *   dismissal_restrictions: {
+ *     users: [
+ *       {
+ *         id: 1,
+ *         node_id: "MDQ6VXNlcjE=",
+ *         login: "octocat"
+ *       },
+ *     ],
+ *     teams: [
+ *       {
+ *         name: "Team name",
+ *         id: 1,
+ *         node_id: "MDQ6VGVhbTE=",
+ *         slug: "team-name",
+ *         description: "",
+ *         privacy: "closed",
+ *         permission: "pull",
+ *       },
+ *     ],
+ *   },
  *   required_linear_history: { enabled: false },
  *   allow_force_pushes: { enabled: false },
  *   allow_deletions: { enabled: false }
@@ -46,7 +66,6 @@ export function protectionResponseDataToUpdateParameters(data) {
   };
   const parameters = mapValues(data, (key, value) => {
     if (/(^|_)url$/.test(key)) return;
-    if (Array.isArray(value)) return value;
     if (value === null || typeof value !== "object") return value;
 
     if ("enabled" in value) return value.enabled;
@@ -63,7 +82,10 @@ function mapValues(object, map) {
   if (typeof object !== "object") return object;
 
   const newObject = Object.fromEntries(
-    Object.entries(object).map(([key, value]) => [key, map(key, value)])
+    Object.entries(object).map(([key, value]) => [
+      key,
+      Array.isArray(value) ? value.map((v) => map(key, v)) : map(key, value),
+    ])
   );
 
   for (const [key, value] of Object.entries(newObject)) {
