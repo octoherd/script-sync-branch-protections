@@ -13,11 +13,6 @@
     "@octoherd/cli": "^5.0.0"
   },
   "exports": "./script.js",
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "publishConfig": {
     "access": "public"
   },
