@@ -14,7 +14,8 @@
   },
   "exports": "./script.js",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "bin": {
     "octoherd-script-sync-branch-protections": "./cli.js"
